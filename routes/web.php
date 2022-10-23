@@ -1,7 +1,7 @@
 <?php
 
 
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,5 +23,8 @@ Route::get('/', function () {
 Route::get('/vue', [\App\Http\Controllers\VueController::class, 'index'])->name('vue');
 Route::get('/try-catch', [\App\Http\Controllers\SandBoxController::class, 'trycatch'])->name('trycatch');
 
+
+Route::resource('/users', UserController::class);
+//Route::post('/users-store', [UserController::class,'store'])->name('users.save');
 
 
